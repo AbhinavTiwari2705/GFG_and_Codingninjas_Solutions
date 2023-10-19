@@ -9,6 +9,8 @@ int findAllSubarraysWithGivenSum(vector < int > & nums, int k) {
             count+=mep[remove];
             mep[presum]++;
         }
+
+    
         return count;
     
     }
