@@ -12,6 +12,7 @@ int lowerBound(vector<int> arr, int n, int x) {
 
         }
 
+
         else {
             low = mid + 1; // look on the right
         }
