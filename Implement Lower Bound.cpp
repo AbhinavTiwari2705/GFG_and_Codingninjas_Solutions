@@ -8,6 +8,7 @@ int lowerBound(vector<int> arr, int n, int x) {
         if (arr[mid] >= x) {
             ans = mid;
             
+            
             high = mid - 1;
 
         }
