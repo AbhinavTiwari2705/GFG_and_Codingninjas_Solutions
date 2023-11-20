@@ -1,6 +1,7 @@
 int search(vector<int>& arr, int n, int k)
 {
     int low = 0, high = arr.size() - 1;
+    
     while (low <= high) {
         int mid = (low + high) / 2;
 
