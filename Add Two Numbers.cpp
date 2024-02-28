@@ -4,6 +4,7 @@
  * class Node {
  * public:
  *      int data;
+ 
  *      Node *next;
  *      Node() {
  *          this->data = 0;
