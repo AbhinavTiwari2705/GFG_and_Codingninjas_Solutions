@@ -23,8 +23,22 @@ class Solution {
   public:
     int minimumEnergy(vector<int>& h, int n) {
         // Code here
-        vector<int> v(n+1,-1);
-        return helper(n-1,v,h);
+        // vector<int> v(n+1,-1);
+        // return helper(n-1,v,h);
+        
+        vector<int> dp(n);
+        
+        dp[0]=0;
+        
+        for(int i=1;i<n;i++){
+            int f =dp[i-1]+  abs(h[i]-h[i-1]);
+            int s = INT_MAX;
+            if(i>1){
+                s =dp[i-2]+ abs(h[i]-h[i-2]);
+            }
+            dp[i]=min(f,s);
+        }
+        return dp[n-1];
         
         
     }
