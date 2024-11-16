@@ -2,43 +2,45 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 // } Driver Code Ends
-//User function template for C++
-class Solution{
-public:
-	void pushZerosToEnd(int arr[], int n) {
-	    // code here
-	    int count =0;
-	            for(int i=0;i<n;i++)
-        {
-            if(arr[i]!=0)
-            {
-                arr[count]=arr[i];
-                count++;
+// User function template for C++
+class Solution {
+  public:
+    void pushZerosToEnd(vector<int>& arr) {
+        // code here
+        int cnt=0,i=0;
+        
+        while(i<arr.size()){
+            if(arr[i]!=0){ 
+            arr[cnt]=arr[i]; cnt++;
             }
+            i++;
         }
-        while(count<n)
-        {
-            arr[count]=0;
-            count++;
-        }
-	}
+        while(cnt<arr.size()) {
+            arr[cnt]=0; cnt++;}
+    }
 };
+
 
 //{ Driver Code Starts.
 int main() {
     int t;
     cin >> t;
+    cin.ignore();
     while (t--) {
-        int n, i;
-        cin >> n;
-        int arr[n];
-        for (i = 0; i < n; i++) {
-            cin >> arr[i];
+        vector<int> arr;
+        string input;
+        getline(cin, input);
+        stringstream ss(input);
+        int number;
+        while (ss >> number) {
+            arr.push_back(number);
         }
         Solution ob;
-        ob.pushZerosToEnd(arr, n);
-        for (i = 0; i < n; i++) {
+        int n = arr.size();
+        ob.pushZerosToEnd(arr);
+        for (int i = 0; i < n; i++) {
             cout << arr[i] << " ";
         }
         cout << "\n";
